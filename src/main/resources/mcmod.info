@@ -3,7 +3,7 @@
   "modid": "tfcmetric",
   "name": "TFC Metric",
   "description": "Makes TFC food weight measurements metric.",
-  "version": "r1.0",
+  "version": "r1.1",
   "mcversion": "1.7.10",
   "url": "",
   "updateUrl": "",
