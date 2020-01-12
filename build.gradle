@@ -1,0 +1,67 @@
+buildscript
+{
+    repositories
+    {
+        mavenCentral()
+        maven
+        {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+        maven
+        {
+            name = "sonatype"
+            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+    }
+    dependencies
+    {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+    }
+}
+
+apply plugin: 'forge'
+
+ext.configFile = file('build.properties')
+ext.config = parseConfig(configFile)
+
+version = "${config.mod_version}"
+group= "com.yorkeJohn.tfcmetric"
+archivesBaseName = "${config.mod_name}"
+
+minecraft
+{
+    version = "1.7.10-10.13.4.1558-1.7.10"
+    runDir = "run"
+}
+
+dependencies
+{
+}
+
+processResources
+{
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs)
+    {
+        include 'mcmod.info'
+    }
+
+    from(sourceSets.main.resources.srcDirs)
+    {
+        exclude 'mcmod.info'
+    }
+}
+
+
+def parseConfig(File config)
+{
+    config.withReader
+    {
+        def prop = new Properties()
+        prop.load(it)
+        return (new ConfigSlurper().parse(prop))
+    }
+}

@@ -1,0 +1,9 @@
+package yorkejohn.tfcmetric.common.lib;
+
+public class LibInfo
+{
+	public static final String MODID = "TFCMetric";
+	public static final String NAME = "TFC Metric Addon";
+	public static final String VERSION = "r1.0";
+	public static final String DEPENDENCIES = "required-after:TerraFirmaCraft@[0.79.30.925)";
+}

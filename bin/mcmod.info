@@ -1,0 +1,16 @@
+[
+{
+  "modid": "tfcmetric",
+  "name": "TFC Metric",
+  "description": "Makes TFC food weight measurements metric.",
+  "version": "r1.0",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["John Yorke"],
+  "credits": "The Standard International System of Units.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
